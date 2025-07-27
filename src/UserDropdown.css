@@ -1,0 +1,132 @@
+.user-dropdown-container {
+  position: absolute;
+  top: 45px;
+  left: 30px;
+  z-index: 1000;
+  direction: rtl;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  border: 1.5px solid #00BA9F;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: border-radius 0.2s ease-out;
+  
+}
+
+
+.user-dropdown-container.open {
+  border-radius: 20px;
+}
+
+.user-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  min-width: 130px;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.user-dropdown-header:hover {
+  background-color: #f5f5f5;
+}
+
+.user-dropdown-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.user-dropdown-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.user-dropdown-text {
+  font-family: 'IRANYekan';
+  color: #00BA9F;
+  flex-grow: 1;
+  text-align: right;
+  white-space: nowrap;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+
+.user-dropdown-header .caret-icon {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* The dropdown menu content */
+.user-dropdown-menu {
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.user-dropdown-container.open .user-dropdown-menu {
+  max-height: 100px;
+  opacity: 1;
+}
+
+
+.user-dropdown-divider {
+  border-top: 1px solid #e0e0e0;
+  margin: 5px 15px;
+}
+
+.user-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  color: #00BA9F;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.user-dropdown-item:hover {
+  background-color: #e6f7f5;
+  /* Light hover for menu items */
+}
+
+.user-dropdown-item .user-dropdown-text {
+  font-weight: normal;
+  /* Normal weight for menu items */
+  text-align: right;
+}
+
+/* SVG Fill Color (Important for ensuring icons are visible) */
+.user-dropdown-icon svg path {
+  stroke: #00BA9F;
+  /* Ensure the paths are colored to match theme */
+}
+
+/* Specific adjustment to make the SVG icons in the header match the screenshot */
+.user-dropdown-header .user-dropdown-icon svg path {
+  stroke-width: 1.5;
+  /* Slightly thicker stroke for the user icon */
+}
+
+.user-dropdown-header .caret-icon svg path {
+  stroke-width: 2;
+  /* Thicker stroke for the caret for better visibility */
+}
+
+.user-dropdown-item .logout-icon svg path {
+  stroke-width: 1.5;
+  /* Consistent stroke for logout icon */
+}

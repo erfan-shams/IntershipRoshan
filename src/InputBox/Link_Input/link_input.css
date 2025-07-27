@@ -1,0 +1,85 @@
+.link_input:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+}
+
+.headerTab {
+    position: absolute;
+    width: 90%;
+    right: 5%;
+    height: 12%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row-reverse;
+    top: 5%;
+    border-bottom: 0.25px solid rgba(0, 0, 0, 0.5);
+    ;
+}
+
+.mainContext {
+    position: absolute;
+    top: 25%;
+    width: 80%;
+    left: 10%;
+    height: 40%;
+    font-family: 'IRANYekan';
+    font-style: normal;
+    color: #000000;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: right;
+    overflow:auto;
+    
+}
+
+.audio {
+    position: absolute;
+    bottom: 5%;
+    width: 90%;
+    left: 10%;
+}
+
+.audio audio {
+    width: 90%;
+}
+
+.mainContext_timeline:nth-child(odd) {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background: #F2F2F2;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:center;
+
+}
+.mainContext_timeline:nth-child(even) {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background: #ffffff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:center;
+}
+
+#timeline_container{
+    position: absolute;
+    top: 25%;
+    width: 80%;
+    left: 10%;
+    height: 40%;
+    font-family: 'IRANYekan';
+    font-style: normal;
+    color: #000000;
+    
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    overflow:auto;
+}

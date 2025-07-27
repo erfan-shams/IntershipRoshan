@@ -1,0 +1,15 @@
+.input_box{
+    position:absolute;
+    width: 45%;
+    height: 45%;
+    border: 1px solid #00BA9F;
+    border-radius: 25px;
+    top:31%;
+    right: 64vh;  
+}
+
+@media screen and (max-width: 1024px){
+    .input_box{
+        right: 200px;
+    }
+}

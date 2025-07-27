@@ -1,0 +1,30 @@
+
+
+
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  direction: rtl; 
+  text-align: right;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: white;
+  overflow-y: auto;
+  display: flex; 
+  justify-content: center; 
+  align-items: flex-start; 
+}
+
+
+/* @media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; 
+  }
+} */

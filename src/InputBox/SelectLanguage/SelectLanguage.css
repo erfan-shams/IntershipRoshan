@@ -1,0 +1,65 @@
+.language_dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.dropdown-container {
+    position: relative;
+    width: 130px;
+    /* Adjust width as needed */
+    height: 40px;
+    /* Adjust height as needed */
+    background-color: #fff;
+    /* White background for the dropdown */
+    border: 2px solid #20c997;
+    /* Teal border color */
+    border-radius: 25px;
+    /* Half of height for fully rounded corners */
+    overflow: hidden;
+    /* Hide default select arrow */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    /* Padding inside the dropdown */
+
+}
+
+.custom-dropdown {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: #20c997;
+    padding-right: 20px;
+    cursor: pointer;
+    outline: none;
+    text-align: right;
+    direction: rtl;
+}
+
+/* Style for the options within the dropdown */
+.custom-dropdown option {
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    left: 15px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #20c997;
+    pointer-events: none;
+    /* Allow clicks to pass through to the select */
+    
+}

@@ -1,0 +1,28 @@
+#header_1 {
+    position: absolute;
+    width: 227px;
+    height: 48px;
+    left: 40%;
+    top: 10%;
+    font-family: 'IRANYekan';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 48px;
+    color: #00BA9F;
+}
+
+#header_2 {
+    position: absolute;
+    width: 412px;
+    height: 56px;
+    left: 32%;
+    top: 15%;
+    font-family: 'IRANYekan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: #969696;
+}

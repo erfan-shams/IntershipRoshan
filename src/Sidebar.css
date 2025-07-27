@@ -1,0 +1,162 @@
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    /* Use min-height to allow content to expand */
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    /* For right-to-left layout */
+    text-align: right;
+    overflow: hidden;
+    /* Prevent horizontal scroll from sidebar shadow if any */
+}
+
+.content-area {
+    flex-grow: 1;
+    /* Allows content to take up remaining space */
+    padding: 20px;
+    background-color: #f0f2f5;
+    overflow-y: auto;
+    /* Allows content to scroll if it overflows vertically */
+    display: flex;
+    /* Use flex to center content if needed */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: flex-start;
+    /* Align content to the top */
+}
+
+
+
+
+.sidebar {
+    width: 10vw;
+    min-width: 180px;
+    max-width: 240px;
+    background: linear-gradient(178.67deg, #00B5A0 11%, #00C69B 92.51%);
+    color: white;
+    padding-top: 13vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+
+
+.sidebar-logo {
+    margin-bottom: 5vh; 
+    text-align: center;
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    position: absolute;
+    top: 5%;
+  }
+
+.logo-text {
+    letter-spacing: 0.5px;
+    font-family: 'IRANYekan';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: right;
+    color: #FFFFFF;
+
+
+}
+
+.sidebar-nav {
+    position: absolute;
+    width: 100%;
+    flex-grow: 1;
+    padding-top: 40%;
+    box-sizing: border-box;
+    top: 21%;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center nav items */
+}
+
+.sidebar-nav li {
+    width: calc(100% - 2vw);
+    /* Responsive padding on the sides using viewport width */
+    margin-bottom: 2vh;
+    /* Responsive spacing between nav items */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align content to the right (RTL) */
+    gap: 15px;
+    padding: 2.5vh 1.5vw;
+    /* Responsive padding based on viewport height and width */
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.9em, 1.3vw, 1.1em);
+    /* Responsive font size for nav items */
+    font-weight: 500;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    width: 150px;
+    height: 48px;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-item.active {
+    background-color: #02816E;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(20px, 1.8vw, 24px);
+    color: white;
+    height: clamp(20px, 1.8vw, 24px);
+}
+
+
+
+/* Style for the SVG icons within the active state */
+.nav-item.active .icon-wrapper svg path {
+    fill: #38b2ac;
+}
+
+.text-content {
+    white-space: nowrap;
+    font-family: 'IRANYekan';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 8vw;
+        min-width: 130px;
+        max-width: 180px;
+    }
+}

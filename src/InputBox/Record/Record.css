@@ -1,0 +1,153 @@
+.icon-button {
+    background-color: #4CAF50; /* Default green for record */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    padding: 13px 26px;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content:space-between;
+    /* gap: 10px; */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* For download link */
+   
+   
+}
+.icon-button span{
+    margin-left: 8px;
+}
+
+.icon-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.icon-button i {
+    font-size: 1.3em;
+}
+
+.icon-button.record {
+    background-color: #e74c3c; /* Red for record */
+}
+
+.icon-button.record:hover {
+    background-color: #c0392b;
+}
+
+.icon-button.stop {
+    background-color: #3498db; /* Blue for stop */
+}
+
+.icon-button.stop:hover {
+    background-color: #2980b9;
+}
+
+.icon-button.download {
+    background-color: #28a745; /* Green for download */
+}
+
+.icon-button.download:hover {
+    background-color: #218838;
+}
+
+.icon-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.link_input:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+}
+
+.headerTab {
+    position: absolute;
+    width: 90%;
+    right: 5%;
+    height: 12%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row-reverse;
+    top: 5%;
+    border-bottom: 0.25px solid rgba(0, 0, 0, 0.5);
+    ;
+}
+
+.mainContext {
+    position: absolute;
+    top: 25%;
+    width: 80%;
+    left: 10%;
+    height: 40%;
+    font-family: 'IRANYekan';
+    font-style: normal;
+    color: #000000;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: right;
+    overflow:auto;
+    
+}
+
+.audio {
+    position: absolute;
+    bottom: 5%;
+    width: 90%;
+    left: 10%;
+}
+
+.audio audio {
+    width: 90%;
+}
+
+.mainContext_timeline:nth-child(odd) {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background: #F2F2F2;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:center;
+
+}
+.mainContext_timeline:nth-child(even) {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background: #ffffff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:center;
+}
+
+#rc_timeline_container{
+    position: absolute;
+    top: 25%;
+    width: 80%;
+    left: 10%;
+    height: 40%;
+    font-family: 'IRANYekan';
+    font-style: normal;
+    color: #000000;
+    
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    overflow:auto;
+}

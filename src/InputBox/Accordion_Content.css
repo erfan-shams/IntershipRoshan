@@ -1,0 +1,130 @@
+.accordion_content {
+    background-color: white;
+    overflow: hidden;
+    /* transition: max-height 0.3s ease-out, padding 0.3s ease-out; */
+    max-height: 500px;
+    padding: 10px 0;
+    min-height: 400px;
+}
+
+
+
+.accordion-item.active {
+    border: 1px solid #00BA9F;
+}
+
+
+.tabs-container {
+    padding: 10px 20px;
+}
+
+.tabs_header {
+    display: flex;
+    flex-direction: row-reverse;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.tab-button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 5px;
+    font-weight: bold;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button.active {
+    border-bottom: 1px solid #000000;
+    color: #333;
+    pointer-events: none;
+}
+
+
+
+.tab-content {
+    display: none;
+    padding: 10px 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+
+.timed_text_row {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+    position: relative;
+    min-height: 50px;
+}
+
+.timed_text_row:nth-child(odd) {
+    background: #F2F2F2;
+    box-shadow: 1px 1px 50px rgba(99, 99, 99, 0.05);
+    border-radius: 15px;
+}
+
+.timed_text_row:last-child {
+    border-bottom: none;
+}
+
+.timed_text_row .timestamp {
+    flex-shrink: 0;
+    width: 100px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.timed_text_row .text {
+    flex-grow: 1;
+
+    padding: 0 10px;
+    color: #333;
+}
+
+.playback-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.1);
+    display: none;
+    pointer-events: none;
+}
+
+
+.timed_text_row.highlight .playback-indicator {
+    display: block;
+
+}
+
+
+.simple-text-content {
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+}
+
+
+.media-player {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 100px;
+    bottom: 10px;
+}
+
+

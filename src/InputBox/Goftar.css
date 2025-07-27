@@ -1,0 +1,113 @@
+#controll_1_1 {
+    display: flex;
+    flex-direction: row;
+    width: 90px;
+    height: 48px;
+    align-items: center;
+
+}
+
+#controll_1_2 {
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    height: 48px;
+    background: #FF1654;
+    box-shadow: 1px 1px 50px rgba(99, 99, 99, 0.05);
+    border-radius: 10px 10px 0px 0px;
+    align-items: center;
+    align-content: center;
+    margin-right: 10px;
+}
+
+
+#controll_2_1 {
+
+    display: flex;
+    flex-direction: row;
+    width: 90px;
+    height: 48px;
+    align-items: center;
+    margin-right: 10px;
+    
+
+}
+
+#controll_2_2 {
+    display: flex;
+    flex-direction: row;
+    width: 144px;
+    height: 48px;
+    background: #118AD3;
+    box-shadow: 1px 1px 50px rgba(99, 99, 99, 0.05);
+    border-radius: 10px 10px 0px 0px;
+    align-items: center;
+    align-content: center;
+}
+
+#controll_3_1 {
+    display: flex;
+    flex-direction: row;
+    width: 90px;
+    height: 48px;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#controll_3_2 {
+
+    display: flex;
+    flex-direction: row;
+    width: 144px;
+    height: 48px;
+
+    background: #00BA9F;
+    box-shadow: 1px 1px 50px rgba(99, 99, 99, 0.05);
+    border-radius: 10px 10px 0px 0px;
+    align-items: center;
+    align-content: center;
+
+
+
+}
+
+#controller {
+    position: absolute; 
+    width: 45%;
+    height: 40%;
+    top: 26.1%;
+    right: 64vh;
+    justify-items: right;
+}
+
+@media screen and (max-width: 1024px){
+    #controller{
+        right: 200px;
+    }
+   
+}
+
+#controller ul {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    list-style: none;
+
+}
+
+
+
+#micIcon {
+    position: relative;
+    
+}
+
+#uploadIcon {
+
+    width: 18.34px;
+    height: 15px;
+}
+
+#chainIcon {
+    
+}
