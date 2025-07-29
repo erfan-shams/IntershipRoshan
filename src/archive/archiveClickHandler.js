@@ -1,6 +1,6 @@
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
-import { handleRequest } from "./fetchRequests";
-export function archiveClickHandler({requests,setRequests}) {
+import { deleteRequest } from "./fetchRequests";
+export function archiveClickHandler({archiveItems,setArchiveItem,requests, setRequests}) {
 
 
     const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -21,6 +21,7 @@ export function archiveClickHandler({requests,setRequests}) {
             });
             console.log(header.closest('.accordion-item').classList.contains('active'))
             header.closest('.accordion-item').classList.toggle('active');
+
             document.getElementById('pagination').style.top = '80%'
             document.querySelectorAll('.accordion-item').forEach(item => {
                 if (item.closest('.accordion-item').classList.contains('active') === true) {
@@ -99,15 +100,20 @@ export function archiveClickHandler({requests,setRequests}) {
             document.body.removeChild(tempTextArea);
         })
     })
-    document.querySelectorAll('.delIcon').forEach(delIcon => {
-        delIcon.addEventListener('click', (event) => {
+    document.querySelectorAll('.delIcon').forEach(async (delIcon) => {
+        delIcon.addEventListener('click', async(event) => {
+            
             event.stopPropagation();
             let id = delIcon.getAttribute('data-id')
-            handleRequest({ method: 'del', id: id })
-             let updated_requests = requests.filter(archiveItem => archiveItem.id != id);
-             
-             setRequests(updated_requests)
+            let updated_archiveItems = archiveItems.filter(archiveItem => archiveItem.id != id);
+            setArchiveItem(updated_archiveItems)
 
+            let updated_requests = requests.filter(archiveItem => archiveItem.id != id);
+            setRequests(updated_requests)
+
+            await deleteRequest(id)
+           
+            
             
         })
     })

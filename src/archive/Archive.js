@@ -1,21 +1,37 @@
 import { useEffect, useState } from 'react'
 import './Archive.css'
-import { handleRequest } from './fetchRequests'
+import { listRequests } from './fetchRequests'
 import { archiveClickHandler } from './archiveClickHandler'
 export default function Archive() {
     const [requests, setRequests] = useState([])
     const [page, setPage] = useState(1)
-    const [pages, setPages] = useState(13)
-    useEffect(() => {
-        setRequests(handleRequest({method:'get',  page:page }))
-       
+    const [pages, setPages] = useState(1)
+    const [archiveItems,setArchiveItem] = useState([])
 
-    }, [page])
     useEffect(() => {
-        archiveClickHandler({requests,setRequests})
+        // setRequests(handleRequest({method:'get',  page:page }))
+        async function fetchData() {
+            const data = await listRequests()
+            setRequests(data)
+            setPages(data.length/5)
+            archiveClickHandler({archiveItems,setArchiveItem,requests, setRequests})
+           
+          }
+          fetchData();
         
-    }, [requests])
 
+    }, [])
+
+    useEffect(() => {
+            setArchiveItem(requests.slice((page-1)*5,page*5)) 
+            
+            
+    },[page,requests])
+
+    useEffect(() => {
+        archiveClickHandler({archiveItems,setArchiveItem,requests, setRequests})
+    },[archiveItems])
+    
     
     return (
         <div className='archive'>
@@ -32,9 +48,10 @@ export default function Archive() {
             <div className="accordion-container">
 
                 {
-                    requests.map((item, index) => (
-                        <ArchiveItem key={item.id} icon={item.icon} filename={item.filename} upload_date={item.upload_date}
-                            file_type={item.file_type} duration={item.duration} duration={item.duration}
+                    
+                    archiveItems.map((item, index) => (
+                        <ArchiveItem key={item.id} icon={1} filename={item.filename} upload_date={item.processed.substring(0, 10)}
+                            file_type={'mp3'} duration={item.duration.substring(0,7)} 
                             text={item.text} src_audio={item.src_audio} segments={item.segments} id={item.id} />
                     ))
                 }
@@ -194,7 +211,7 @@ function DelIcon() {
     const [fill, setFill] = useState('#8F8F8F')
     return (
         <svg onMouseEnter={() => { setFill('#07B49B') }} onMouseLeave={() => { setFill('#8F8F8F') }} width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.49172 2.56921H9.94577C10.2182 2.56921 10.4375 2.78444 10.4375 3.05179V14.5174C10.4375 14.7847 10.2182 14.9999 9.94577 14.9999H1.49172C1.21931 14.9999 1 14.7847 1 14.5174V3.05179C1 2.78444 1.21931 2.56921 1.49172 2.56921V2.56921Z" stroke={fill} stroke-miterlimit="6.2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M1.49172 2.56921H9.94577C10.2182 2.56921 10.4375 2.78444 10.4375 3.05179V14.5174C10.4375 14.7847 10.2182 14.9999 9.94577 14.9999H1.49172C1.21931 14.9999 1 14.7847 1 14.5174V3.05179C1 2.78444 1.21931 2.56921 1.49172 2.56921V2.56921Z" stroke={fill} strokeMiterlimit="6.2" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M1.03578 1.42249H10.4302" stroke={fill} stroke-linecap="round" stroke-linejoin="round" />
             <path d="M3.04933 4.17505V13.3949" stroke={fill} stroke-linecap="round" stroke-linejoin="round" />
             <path d="M5.71863 4.17505V13.3949" stroke={fill} stroke-linecap="round" stroke-linejoin="round" />
@@ -260,7 +277,7 @@ function Segments({ segments }) {
         {
             segments.map((segment, index) => {
 
-                return (<TimedTextRow key={index} start={segment['start']} end={segment['end']} text={segment['text']} />)
+                return (<TimedTextRow key={index} start={segment['start'].substring(0,7)} end={segment['end'].substring(0,7)} text={segment['text']} />)
             }
             )
         }</>
